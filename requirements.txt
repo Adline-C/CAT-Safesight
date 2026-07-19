@@ -9,3 +9,4 @@ shapely
 pydantic-settings
 python-dotenv
 reportlab
+python-multipart
