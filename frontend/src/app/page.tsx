@@ -45,6 +45,7 @@ export default function Dashboard() {
   const [mobileAlertSent, setMobileAlertSent] = useState(false);
   
   // Tab and image inspection states
+  
   const [activeTab, setActiveTab] = useState<"video" | "image">("video");
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [isWebcamActive, setIsWebcamActive] = useState(false);
@@ -354,11 +355,10 @@ if (!mobileAlertSent) {
     formData.append("zone_coordinates", JSON.stringify(scaledPoints));
 
     try {
-      const response = await fetch("http://localhost:8000/api/analyze-image", {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/analyze-image`, {
         method: "POST",
         body: formData,
-      });
-
+        });
       if (!response.ok) throw new Error("Image analysis endpoint failed");
       const data = await response.json();
 
