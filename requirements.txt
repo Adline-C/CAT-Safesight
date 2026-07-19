@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+sqlalchemy[asyncio]
+psycopg2-binary
+asyncpg
+opencv-python
+ultralytics
+shapely
+pydantic-settings
+python-dotenv
+reportlab

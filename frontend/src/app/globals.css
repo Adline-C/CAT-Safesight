@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root {
+  --background: #09090b;
+  --foreground: #f4f4f5;
+  --safety-yellow: #FFCD00;
+  --alert-red: #FF5000;
+}
+
+@theme {
+  --color-safety-yellow: var(--safety-yellow);
+  --color-alert-red: var(--alert-red);
+  --color-dark-charcoal: #121212;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom glow and animations for alert */
+@keyframes pulse-red {
+  0%, 100% {
+    border-color: #FF5000;
+    box-shadow: 0 0 10px rgba(255, 80, 0, 0.5);
+  }
+  50% {
+    border-color: #FFCD00;
+    box-shadow: 0 0 20px rgba(255, 80, 0, 0.8);
+  }
+}
+
+.alert-pulse {
+  animation: pulse-red 1.5s infinite;
+}
